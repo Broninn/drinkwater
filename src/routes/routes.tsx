@@ -1,8 +1,9 @@
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { NavigationContainer, ParamListBase } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { View, Text } from 'native-base';
 import Icon from 'react-native-vector-icons/AntDesign'
-import { Dashboard } from '../screens/Dashborad';
+import { DashboardScreen } from '../screens/DashboardScreen';
+import { ProfileScreen } from '../screens/ProfileScreen';
 
 type ITabRoutes = {
     Settings: undefined;
@@ -26,19 +27,20 @@ interface IMytab {
 
 }
 
-export const Routes: React.FunctionComponent<IMytab> = props => {
-  return (
+export const Routes: React.FunctionComponent<IMytab> = () => {
+    
+    return (
     <NavigationContainer>
         <Tab.Navigator>
             <Tab.Screen name="Settings" component={Screen} options={{
                 title: 'Configurações',
                 tabBarIcon: () => <Icon name="setting" size={20} color='#e3d'/>
             }} />
-            <Tab.Screen name="Home" component={Dashboard} options={{
-                title: 'Home :)',
+            <Tab.Screen name="Home" component={DashboardScreen} options={{
+                title: 'Home',
                 tabBarIcon: () => <Icon name="home" size={20} color='#e3d'/>
             }} />
-            <Tab.Screen name="Profile" component={Screen} options={{
+            <Tab.Screen name="Profile" component={ProfileScreen} options={{
                 title: 'Perfil',
                 tabBarIcon: () => <Icon name="user" size={20} color='#e3d'/>
             }} />

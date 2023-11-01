@@ -1,14 +1,15 @@
 import { View, Text, HStack, Button, Box, VStack, Center } from 'native-base';
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useToast } from 'native-base';
+import { UserContext } from '../contexts/UserContext';
 
 interface IDashbordProps {}
 
-export const Dashboard: React.FC<IDashbordProps> = () => {
+export const DashboardScreen: React.FC<IDashbordProps> = () => {
+    const {goal} = useContext(UserContext)
     const [cupSize, setCupSize] = useState<number>(250);
     const [water, setWater] = useState<number>(0);
-    const [goal, setGoal] = useState<number>(2000);
     const toast = useToast();
 
     const handleWater = () => {
