@@ -35,7 +35,7 @@ export const Routes: React.FunctionComponent<IMytab> = props => {
                 tabBarIcon: () => <Icon name="setting" size={20} color='#e3d'/>
             }} />
             <Tab.Screen name="Home" component={Dashboard} options={{
-                title: 'Home',
+                title: 'Home :)',
                 tabBarIcon: () => <Icon name="home" size={20} color='#e3d'/>
             }} />
             <Tab.Screen name="Profile" component={Screen} options={{
