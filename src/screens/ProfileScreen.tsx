@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Divider, Slider, Text } from "native-base";
+import { Avatar, Box, Button, Divider, Input, Slider, Text } from "native-base";
 import React, { useContext, useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { UserContext } from "../contexts/UserContext";
@@ -9,7 +9,7 @@ interface ProfileScreenProps {
 export const ProfileScreen: React.FC<ProfileScreenProps> = ({
 }) => {
     const [local, setLocal] = useState<number>(9999)
-    const {goal, user, getData, storeData} = useContext(UserContext)
+    const {goal, user, setGoal, setUser} = useContext(UserContext)
 
     // useEffect(() => {
     //     getData().then((data) => {
@@ -28,6 +28,12 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
             <Text alignSelf="center" fontSize="2xl" mt={4}>
                 {user?.name}
             </Text>
+            <Input defaultValue={user?.name} 
+            onChangeText={(value) => {
+                setUser({...user, name: value});
+            }}
+            placeholder="Default Input"  />
+            
             
             <Divider my={10} />
             <Box mx={20}>
@@ -42,7 +48,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({
                     value={goal}
                     minValue={0} 
                     maxValue={4000} 
-                    onChange={(value) =>storeData(value)}
+                    onChange={(value) =>setGoal(value)}
                     step={100}
                 >
                     <Slider.Track>
