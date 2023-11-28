@@ -5,13 +5,13 @@ import { Routes } from './src/routes/routes';
 import { UserProvider } from './src/contexts/UserContext';
 
 export default function App() {
+
   return (
     <NativeBaseProvider>
         <UserProvider>
           <StatusBar style="auto" />
           <Routes />
         </UserProvider>
-        {/* <Dashboard /> */}
     </NativeBaseProvider>
   );
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "825619031195",
+    "project_id": "broninn-drink-water",
+    "storage_bucket": "broninn-drink-water.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:825619031195:android:aefcb982e0705098e7d23e",
+        "android_client_info": {
+          "package_name": "com.broninn.drinkwater"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACZ0alGBgdMoVZXbfGXMIml8siEEfbPaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
